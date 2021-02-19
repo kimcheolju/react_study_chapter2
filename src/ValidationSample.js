@@ -19,6 +19,7 @@ class ValidationSample extends Component {
             clicked:true,
             validated: this.state.password === '0000'
         });
+        this.input.focus();
     }
 
 
@@ -31,6 +32,7 @@ class ValidationSample extends Component {
                     value={this.state.password}
                     onChange={this.handleChange}
                     className={this.state.clicked?(this.state.validated?'success':'failure'):''}
+                    ref={(ref)=> {this.input = ref;}}
                 />
                 <button onClick={this.handleButtonClick}>검증하기</button>
             </div>
